@@ -35,7 +35,7 @@ const Features = () => {
         <div className='grid grid-cols-2 text-white mt-12 gap-10 max-lg:grid-cols-1 '>
           <motion.div
             className='bg-cover bg-no-repeat bg-center  shadow-lg h-96'
-            style={{ backgroundImage: `url("https://images.pexels.com/photos/1762851/pexels-photo-1762851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")` }}
+            style={{ backgroundImage: `url("https://images.pexels.com/photos/17485819/pexels-photo-17485819/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-the-ways-in-which-ai-can-solve-important-problems-it-was-created-by-vincent-schwenk-as-part-of-the-visualis.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")` }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}

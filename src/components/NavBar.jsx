@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-
+import { IoMdClose } from "react-icons/io";
 import { FaWandMagicSparkles } from "react-icons/fa6";
-
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { Link } from '@tanstack/react-router';
+import {AnimatePresence, motion} from "motion/react"
+import { easeOut } from 'motion';
 const NavBar = () => {
   const [open,setOpen]=useState(false);
     const menu=[
         {name:"Home",path:"/"},
         {name:"Portfolio",path:"/"},
-        {name:"About",path:"/"},
+        {name:"About",path:"/about"},
         {name:"Services",path:"/"},
         
     ]
@@ -33,10 +35,42 @@ const NavBar = () => {
             className='w-[25px] h-[25px] rounded-full object-center object-cover'/>
            <a href='#contact' className='text-xs px-5 py-2 border-neutral-900 border rounded-md font-semibold max-lg:hidden'>Request Quote</a>
            <a href='#contact' className='text-xs px-5 py-2  bg-black text-white rounded-md font-semibold'>Get Started</a>
+           <button className='lg:hidden' onClick={()=>setOpen(true)}><HiOutlineMenuAlt4/></button>
             </div>
 
     </div>
     </div>
+    <AnimatePresence>
+    {open && (
+  <motion.div
+    initial={{ x: "100%" }}
+    animate={{ x: 0 }}
+    exit={{ x: "100%" }}
+    transition={{ duration: 0.3, ease: "easeInOut" }}
+    className="bg-[#f7f7f7] pt-10 lg:hidden top-0 fixed h-full w-full right-0"
+  >
+    <button
+      className="text-4xl w-full flex justify-end px-10"
+      onClick={() => setOpen(false)}
+    >
+      <IoMdClose />
+    </button>
+    <div className='flex flex-col justify-between items-center h-[80vh]'>
+    <ul className="flex flex-col text-xl justify-start pt-16 items-center h-fit font-semibold gap-5">
+      {menu.map((item, index) => (
+        <li
+          key={index}
+          className="px-2 py-1 text-4xl hover:underline rounded-md hover:bg-neutral-100 cursor-pointer"
+        >
+          <Link onClick={()=>setOpen(false)} to={item.path}>{item.name}</Link>
+        </li>
+      ))}
+    </ul>
+    <h1 className=' bottom-0 text-neutral-700 text-xs text-center font-semibold '>Developed by <a className='underline' href='https://pranayportfolio.vercel.app/about'>Pranay</a></h1>
+    </div>
+  </motion.div>
+)}
+</AnimatePresence>
     </>
   )
 }
