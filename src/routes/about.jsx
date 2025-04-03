@@ -12,8 +12,8 @@ function RouteComponent() {
         
       >
         
-        <div className="bg-[#101010] h-full w-full flex flex-col gap-3 justify-center items-center max-lg:px-4 text-white text-center">
-          <h1 className="font-semibold text-5xl max-lg:text-3xl max-lg:text-start max-lg:leading-10 leading-14 w-6/12 max-lg:w-full">
+        <div className="bg-gradient-to-tr from-black via-neutral-950 to-neutral-800 h-full w-full flex flex-col gap-3 justify-center items-center max-lg:px-4 text-white text-center">
+          <h1 className="font-semibold bg-gradient-to-t from-slate-600 via-slate-50 to-white bg-clip-text text-transparent text-5xl max-lg:text-3xl max-lg:text-start max-lg:leading-10 leading-14 w-6/12 max-lg:w-full">
             Buckle Up! You’ve Just Entered the <br />
             <span className="bg-gradient-to-l from-indigo-500 via-red-500 to-blue-500 text-transparent bg-clip-text">
               IP Studios Universe!
